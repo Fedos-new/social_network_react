@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img alt='картинка' src="https://tvdate24.com/wp-content/uploads/2019/08/angrybirds-3.jpg"/>
+                <img alt='картинка' src="https://image.freepik.com/free-photo/_8353-6518.jpg"/>
             </div>
             <div className={s.descriptionBlock}>
                 ava + description

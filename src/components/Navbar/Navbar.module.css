@@ -2,14 +2,22 @@
     grid-area: n;
     background-color: #212121;
     padding: 20px;
+    padding-left: 35px;
+    overflow: hidden;
+
 }
 
 .item a {
     color: #727475;
     text-decoration: none;
+
 }
 
 .item a.activeLink {
     color: coral;
+}
+
+.item{
+    padding-top: 25px;
 
 }
