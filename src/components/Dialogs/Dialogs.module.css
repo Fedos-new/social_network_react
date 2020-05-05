@@ -1,27 +1,88 @@
+
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    align-items:center;
+    grid-template-columns: 2fr 12fr;
 }
 
-.dialogsItems .dialog {
+.dialogs.dialogs{
+    margin: 20px;
+}
+
+.dialog {
     padding: 10px;
 }
+
+.dialogs img {
+    border-radius: 50px;
+    width: 55px;
+    height: 55px;
+    padding: 5px;
+    position: relative;
+}
+
+.dialogsItems {
+    text-align: left;
+    line-height: 0;
+    padding: 10px;
+}
+.dialogsItems img {
+    display: grid;
+    grid-area: img;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+/*.dialogsItems name {*/
+/*    display: grid;*/
+/*    grid-area: name;*/
+/*    align-self: center;*/
+/*}*/
 
 .dialogsItems a.activeLink {
     color: coral;
 }
-
 .dialogsItems a {
-
     color: #727475;
     text-decoration: none;
-
+    text-align: center;
 }
 
-.messages {
-
-}
-
-.messages .message {
+.message {
+    position: relative;
+    max-width: 350px;
+    min-height: 20px;
+    line-height: 1;
+    background-color: gainsboro;
+    border: 5px solid gainsboro;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 7px;
+    margin-bottom: 20px;
     padding: 10px;
 }
+.message:before {
+    content: ' ';
+    position: absolute;
+    left: -17px;
+    border: 11px solid transparent;
+    border-right: 11px solid gainsboro;
+    border-bottom: 11px solid gainsboro;
+    line-height: 0;
+    margin-top: 100px;
+    bottom: -5px;
+}
+
+
+
+
+.messages {
+    display: grid;
+
+}
+/*.messagesElements.message {*/
+/*    display: grid;*/
+/*    grid-area: mess;*/
+/*}*/
+
