@@ -8,20 +8,20 @@ import {sendMessageCreator, updateNewMessageText} from "../../redux/dialogs-redu
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
 
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} img={d.image}/>);
     let messagesElements = state.messages.map(m => <Message message={m.message}/>);
     let newMessageElement = React.createRef();
 
 
-    let sendMessageClick = () => {
-        props.dispatch(sendMessageCreator());
+    let onSendMessageClick = () => {
+        props.SendMessageClick();
     }
 
-    let onMessageChange = () => {
+    let onNewMessageChange = () => {
         let text = newMessageElement.current.value;
-        props.dispatch(updateNewMessageText(text));
+        props.updateNewMessageText(text);
     }
 
     return (
@@ -36,10 +36,10 @@ const Dialogs = (props) => {
             </div>
             <textarea ref={newMessageElement}
                       placeholder='Enter your message'
-                      onChange={onMessageChange}
+                      onChange={onNewMessageChange}
                       value={state.newMessageText}
             > </textarea>
-            <button onClick={sendMessageClick}>SEND message</button>
+            <button onClick={onSendMessageClick}>SEND message</button>
         </div>
     )
 };
