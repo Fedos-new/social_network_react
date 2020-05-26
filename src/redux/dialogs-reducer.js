@@ -21,27 +21,28 @@ let initialState = {
 
 
 const dialogsReducer = (state = initialState, action) => {
+
+
     switch (action.type) {
-        case SEND_MESSAGE:
-            let newMessage = {
-                id: 6,
-                message: state.newMessageText,
-            };
-            state.messages.push(newMessage);
-            state.newMessageText = '';
-            return state;
-        case   UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newText;
-            return state;
+        case SEND_MESSAGE: {
+            let text = state.newMessageText;
+            return {
+                ...state,
+                newMessageText: '',
+                messages: [...state.messages, {id: 6, message: text}] // спред оператор ... делаем глубокую копию массива messages и добавляем/уточняем 2 св-ва в массиве
+            }
+        }
+        case   UPDATE_NEW_MESSAGE_TEXT: {
+            return {...state, newMessageText: action.newText}
+        }
         default:
             return state;
     }
 }
 
-export const sendMessageCreator = () => ({
-    type: SEND_MESSAGE,})
-export const updateNewMessageText = (text)=> ({
-    type: UPDATE_NEW_MESSAGE_TEXT , newText: text
+export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
+export const updateNewMessageText = (text) => ({
+    type: UPDATE_NEW_MESSAGE_TEXT, newText: text
 })
 
 export default dialogsReducer;
