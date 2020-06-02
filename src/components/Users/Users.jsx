@@ -3,24 +3,22 @@ import styles from './user.module.css';
 import * as axios from "axios";
 import userPhoto from '../../assets/images/user.png';
 
-class Users extends  React.Component {
+class Users extends React.Component {
 
-    getUsers = () => {
-            if (this.props.users.length === 0) {
-                axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-                    debugger;
-                    this.props.setUsers(response.data.items)
-                });
-            }
+    constructor(props) {
+        super(props);
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            debugger;
+            this.props.setUsers(response.data.items)
+        });
+    }
 
-
-        }
 
     render() {
-        return <div>
-            <button onClick={this.getUsers}>Get Users</button>
-            {
-                this.props.users.map(u => <div key={u.id}>
+        return (<div>
+                <button onClick={this.getUsers}>Get Users</button>
+                {
+                    this.props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
                         <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto}/>
@@ -36,7 +34,7 @@ class Users extends  React.Component {
 
                     </div>
                  </span>
-                    <span>
+                        <span>
                     <span>
                         <div>{u.name}</div>
                         <div>{u.status}</div>
@@ -46,9 +44,10 @@ class Users extends  React.Component {
                         <div>{'u.location.city'}</div>
                     </span>
                 </span>
-                </div>)
-            }
-        </div>
+                    </div>)
+                }
+            </div>
+        )
     }
 }
 
