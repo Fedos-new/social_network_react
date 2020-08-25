@@ -6,6 +6,13 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
+
+    const getArray = () => {
+        for(let i=0; i<props.profile.contacts.length; i++) {
+            return props.profile.contacts[i]
+        }
+    }
+
     return (
         <div>
             <div>
@@ -13,7 +20,23 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
+
                 ava + description
+                <div>
+                    {`Имя : ` + props.profile.fullName}
+                </div>
+                <div>
+                    {`Обо мне: ` + props.profile.aboutMe}
+                </div>
+                <div>
+                    {props.profile.lookingForAJob == true ? "Ищу работу" : "Не ищу работу"}
+                </div>
+                <div>
+                    {"Описание желаемой работы:  " + {getArray} }
+                </div>
+
+
+
             </div>
         </div>
     )
