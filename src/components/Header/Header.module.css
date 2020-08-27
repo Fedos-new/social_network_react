@@ -8,3 +8,10 @@
     padding: 4px;
     padding-left: 35px;
 }
+.loginBlok {
+    float: right;
+}
+
+.loginBlok a {
+    color: white;
+}
