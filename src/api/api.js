@@ -14,19 +14,19 @@ export const usersAPI = {
             .then(response => {
                 return response.data
             })
-    },
-
-    follow (id = 1) {
-        return instance(`follow/${id}`)
-            .then(response => {
-                return response.data
-            })
-    },
-    unfollow (id = 1){
-        return instance(`follow/${id}`, {})
-            .then(response => {
-                return response.data
-            })
     }
+
+    // follow (id) {
+    //     return instance(`follow/${id}`)
+    //         .then(response => {
+    //             return response.data
+    //         })
+    // },
+    // unfollow (id){
+    //     return instance(`follow/${id}`, {})
+    //         .then(response => {
+    //             return response.data
+    //         })
+    // }
 
 }
