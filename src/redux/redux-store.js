@@ -8,9 +8,9 @@ import thunkMiddleware from "redux-thunk";
 
 
 let reducers = combineReducers({
-    profilePage : profileReducer, // <---profileReducer тоже самое, что и profileReducer: profileReducer  (св-во(метод) : значание(функция, которую мы определили))
-    dialogsPage : dialogsReducer,
-    navBar : navbarReducer,
+    profilePage: profileReducer, // <---profileReducer тоже самое, что и profileReducer: profileReducer  (св-во(метод) : значание(функция, которую мы определили))
+    dialogsPage: dialogsReducer,
+    navBar: navbarReducer,
     usersPage: usersReducer,
     auth: authReducer
 });
