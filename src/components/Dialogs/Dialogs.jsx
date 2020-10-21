@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {sendMessageCreator, updateNewMessageText} from "../../redux/dialogs-reducer";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -23,6 +23,8 @@ const Dialogs = (props) => {
         let text = newMessageElement.current.value;
         props.updateNewMessageText(text);
     }
+
+    if (!props.isAuth) return <Redirect to={'/login'}/>
 
     return (
         <div>
