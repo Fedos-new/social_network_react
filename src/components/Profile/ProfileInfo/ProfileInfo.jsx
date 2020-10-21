@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/preloader/Preloader";
+import ProfileStatus from "../ProfileStatus";
+
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -14,14 +16,16 @@ const ProfileInfo = (props) => {
     }
 
     return (
+
+
         <div>
-            <div>
-                <img alt='картинка' src="https://image.freepik.com/free-photo/_8353-6518.jpg"/>
-            </div>
+            {/*<div>*/}
+            {/*    <img alt='картинка' src="https://image.freepik.com/free-photo/_8353-6518.jpg"/>*/}
+            {/*</div>*/}
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
 
-                ava + description
+                <ProfileStatus status={'Hello my friends'} />
                 <div>
                     {`Имя : ` + props.profile.fullName}
                 </div>
@@ -29,7 +33,7 @@ const ProfileInfo = (props) => {
                     {`Обо мне: ` + props.profile.aboutMe}
                 </div>
                 <div>
-                    {props.profile.lookingForAJob == true ? "Ищу работу" : "Не ищу работу"}
+                    {props.profile.lookingForAJob === true ? "Ищу работу" : "Не ищу работу"}
                 </div>
                 <div>
                     {"Описание желаемой работы:  " + {getArray} }
