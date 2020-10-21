@@ -8,6 +8,7 @@ import {NavLink} from "react-router-dom";
 let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
@@ -16,7 +17,8 @@ let Users = (props) => {
     return <div>
         <div>
             {pages.map(p => {
-                return <span className={props.currentPage === p ? styles.selectedPage : ""}
+                debugger
+                return <span className={props.currentPage === p && styles.selectedPage}
                              onClick={(e) => {
                                  props.onPageChanged(p)
                              }}>{p}</span>
@@ -44,7 +46,6 @@ let Users = (props) => {
                                       onClick={() => {
                                           props.unfollow(u.id)
                                       }}>Follow</button>}
-
                     </div>
                  </span>
                 <span>
