@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let initialState = {
     dialogs: [
@@ -15,8 +14,8 @@ let initialState = {
         {id: 3, message: 'Yo!'},
         {id: 4, message: 'WTF?:-)'},
         {id: 5, message: ':-)'},
-    ],
-    newMessageText: ''
+    ]
+
 }
 
 
@@ -25,24 +24,19 @@ const dialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SEND_MESSAGE: {
-            let text = state.newMessageText;
+            let text = action.newMessageElement;
             return {
                 ...state,
-                newMessageText: '',
                 messages: [...state.messages, {id: 6, message: text}] // спред оператор ... делаем глубокую копию массива messages и добавляем/уточняем 2 св-ва в массиве
             }
         }
-        case   UPDATE_NEW_MESSAGE_TEXT: {
-            return {...state, newMessageText: action.newText}
-        }
+
         default:
             return state;
     }
 }
 
-export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
-export const updateNewMessageText = (text) => ({
-    type: UPDATE_NEW_MESSAGE_TEXT, newText: text
-})
+export const sendMessageCreator = (newMessageElement) => ({type: SEND_MESSAGE, newMessageElement})
+
 
 export default dialogsReducer;
