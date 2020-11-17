@@ -15,28 +15,23 @@ let initialState = {
         {id: 4, message: 'WTF?:-)'},
         {id: 5, message: ':-)'},
     ]
-
 }
 
-
 const dialogsReducer = (state = initialState, action) => {
-
-
     switch (action.type) {
         case SEND_MESSAGE: {
             let text = action.newMessageElement;
             return {
                 ...state,
+                dialogs: [...state.dialogs, {id: 6, name: 'You', image: 'https://bipbap.ru/wp-content/uploads/2017/10/3-6.png'}] ,
                 messages: [...state.messages, {id: 6, message: text}] // спред оператор ... делаем глубокую копию массива messages и добавляем/уточняем 2 св-ва в массиве
             }
         }
-
         default:
             return state;
     }
 }
 
 export const sendMessageCreator = (newMessageElement) => ({type: SEND_MESSAGE, newMessageElement})
-
 
 export default dialogsReducer;

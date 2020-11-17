@@ -13,6 +13,7 @@
 }
 
 .app-wrapper-content {
+    padding-left: 20px;
     grid-area: c;
     background-color: #FFFFFF;
     overflow-y: scroll;
