@@ -2,16 +2,20 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validator/valodators";
+import {connect} from "react-redux";
+import {login} from "../../redux/auth-reducer";
+import {Redirect} from "react-router-dom";
+
 
 const LoginForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field placeholder={'Login'} component={Input} name={"login"} validate={[required]}/>
+                <Field placeholder={'email'} component={Input} name={"email"} validate={[required]}/>
             </div>
             <div>
-                <Field placeholder={'Password'} component={Input} name={"password"} validate={[required]}/>
+                <Field placeholder={'Password'} component={Input} name={"password"} type={"password"} validate={[required]}/>
             </div>
             <div>
                 <Field type={"checkbox"} component={Input} name={"rememberMe"} /> remember me
@@ -29,7 +33,10 @@ const LoginReduxFrom = reduxForm({form: 'login'})(LoginForm)
 
 const Login = (props) => {
     const onSubmit = (fromData) => {
-        console.log(fromData)
+        props.login(fromData.email, fromData.password, fromData.rememberMe)
+    }
+    if(props.isAuth) {
+       return <Redirect to={'/profile'}/>
     }
     return <div>
         <h1>LOGIN</h1>
@@ -37,5 +44,8 @@ const Login = (props) => {
     </div>
 }
 
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
 
-export default Login
+export default connect(mapStateToProps,{login})(Login)
