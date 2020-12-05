@@ -6,3 +6,10 @@
 .fromControl.error span {
     color: firebrick;
 }
+
+.formSummaryError {
+    border: 1px solid firebrick;
+    padding: 5px;
+    color: firebrick;
+    display: inline-block;
+}
