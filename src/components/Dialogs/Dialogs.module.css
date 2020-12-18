@@ -34,11 +34,6 @@
     height: 50px;
 }
 
-/*.dialogsItems name {*/
-/*    display: grid;*/
-/*    grid-area: name;*/
-/*    align-self: center;*/
-/*}*/
 
 .dialogsItems a.activeLink {
     color: coral;
@@ -79,8 +74,5 @@
     display: grid;
 
 }
-/*.messagesElements.message {*/
-/*    display: grid;*/
-/*    grid-area: mess;*/
-/*}*/
+
 

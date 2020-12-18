@@ -1,0 +1,7 @@
+.preloader{
+    position: fixed;
+    top: 25%;
+    text-align: center;
+    width: 15%;
+    left: 40%;
+}
