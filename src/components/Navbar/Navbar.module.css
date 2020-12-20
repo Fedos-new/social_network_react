@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
     background-color: #212121;
-    padding: 20px;
+    padding: 20px 37px 20px 37px;
     overflow: hidden;
 
 }
@@ -9,6 +9,7 @@
 .item a {
     color: #727475;
     text-decoration: none;
+    font-size: 18px;
 
 }
 

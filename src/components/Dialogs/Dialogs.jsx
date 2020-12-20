@@ -18,6 +18,7 @@ const Dialogs = (props) => {
 
     let addNewMessage = (value) => {
         props.sendMessageClick(value.newMessageElement)
+
     }
 
     return (

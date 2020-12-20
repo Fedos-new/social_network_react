@@ -1,14 +1,19 @@
 .item{
     padding-top: 25px;
     padding-bottom: 10px;
-    /*padding-left: 55px;*/
     text-align: center;
-}
 
+}
+.itemImg{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .itemImg img {
-    height: 40px;
-    width: 40px;
-    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
     padding: 5px;
     padding-top: 10px;
+
 }
