@@ -13,7 +13,12 @@ const Friends = (props) => {
         </div>
             <div className={s.itemImg}>
                 <img src={av1} alt="avatar" />
+                <img src={av1} alt="avatar" />
+                <img src={av1} alt="avatar" />
                 <img src={av2} alt="avatar" />
+                <img src={av2} alt="avatar" />
+                <img src={av3} alt="avatar" />
+                <img src={av3} alt="avatar" />
                 <img src={av3} alt="avatar" />
             </div>
         </div>
