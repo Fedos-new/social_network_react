@@ -1,4 +1,4 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import dialogsReducer, {sendMessageCreator} from "./dialogs-reducer";
 
 let initialState = {
     dialogs: [
@@ -17,20 +17,23 @@ let initialState = {
     ]
 }
 
-const dialogsReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SEND_MESSAGE: {
-            return {
-                ...state,
-                dialogs: [...state.dialogs, {id: 6, name: 'You', image: 'https://bipbap.ru/wp-content/uploads/2017/10/3-6.png'}] ,
-                messages: [...state.messages, {id: 6, message: action.newMessageElement}] // спред оператор ... делаем глубокую копию массива messages и добавляем/уточняем 2 св-ва в массиве
-            }
-        }
-        default:
-            return state;
-    }
-}
 
-export const sendMessageCreator = (newMessageElement) => ({type: SEND_MESSAGE, newMessageElement})
+test('length of message should be incremented ', () => {
+    //1.  test data
+    let action = sendMessageCreator('Это проверочное сообщение')
 
-export default dialogsReducer;
+    //2. action
+    let newState = dialogsReducer(initialState,action)
+    //3.expected
+    expect(newState.messages.length).toBe(6)
+})
+
+test('length of dialogs should be incremented ', () => {
+    //1.  test data
+    let action = sendMessageCreator('Это проверочное сообщение')
+
+    //2. action
+    let newState = dialogsReducer(initialState,action)
+    //3.expected
+    expect(newState.dialogs.length).toBe(6)
+})

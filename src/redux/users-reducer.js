@@ -30,7 +30,6 @@ const usersReducer = (state = initialState, action) => {
                     return u;
                 } )
             }
-
         case UNFOLLOW:
             return {
                 ...state,
@@ -40,7 +39,6 @@ const usersReducer = (state = initialState, action) => {
                     return u;
                 } )
             }
-
         case SET_USERS: {
             return {...state, users: action.users }
         }
@@ -52,7 +50,8 @@ const usersReducer = (state = initialState, action) => {
         }
         case TOGGLE_IS_FETCHING: {
             return {...state, isFetching: action.isFetching}
-        }case TOGGLE_IS_FOLLOWING_PROGRESS: {
+        }
+        case TOGGLE_IS_FOLLOWING_PROGRESS: {
             return {...state,
                 followingInProgress: action.isFetching
                     ?[...state.followingInProgress, action.userId]

@@ -25,7 +25,6 @@ export const usersAPI = {
         console.warn('Obsolete method. Please profileAPI object')
         return profileAPI.getProfile(userId)
     }
-
 }
 
 export const profileAPI = {
@@ -38,7 +37,6 @@ export const profileAPI = {
     updateStatus(status) {
         return instance.put(`profile/status/`, {status} )
     }
-
 }
 
 export const authAPI = {
