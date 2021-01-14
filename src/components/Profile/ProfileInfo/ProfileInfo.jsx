@@ -4,41 +4,32 @@ import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from '../ProfileStatusWithHooks';
 
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile) {
         return <Preloader/>
     }
 
-    const getArray = () => {
-        for(let i=0; i<props.profile.contacts.length; i++) {
-            return props.profile.contacts[i]
-        }
-    }
+    const getArray = () => profile.contacts.map(el => profile.contacts[el])
 
     return (
 
-
         <div>
-            {/*<div>*/}
-            {/*    <img alt='картинка' src="https://image.freepik.com/free-photo/_8353-6518.jpg"/>*/}
-            {/*</div>*/}
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+                <img src={profile.photos.large}/>
 
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
                 <div>
-                    {`Имя : ` + props.profile.fullName}
+                    {`Имя : ` + profile.fullName}
                 </div>
                 <div>
-                    {`Обо мне: ` + props.profile.aboutMe}
+                    {`Обо мне: ` + profile.aboutMe}
                 </div>
                 <div>
-                    {props.profile.lookingForAJob === true ? "Ищу работу" : "Не ищу работу"}
+                    {profile.lookingForAJob === true ? "Ищу работу" : "Не ищу работу"}
                 </div>
                 <div>
-                    {"Описание желаемой работы:  " + {getArray} }
+                    {"Описание желаемой работы:  " + {getArray}}
                 </div>
-
 
 
             </div>
