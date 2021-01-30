@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from "./User.module.css";
-import userPhoto from "../../assets/images/user.png";
+import userPhoto from "../../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
 
 
-let User = ({user, followingInProgress, follow, unfollow}) => {
+const User = ({user, followingInProgress, follow, unfollow}) => {
     return (
-        <div>
+        <div className={styles.userWap}>
                <span>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
@@ -34,8 +34,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                         <div>{user.status}</div>
                     </span>
                     <span>
-                        <div>{'u.location.country'}</div>
-                        <div>{'u.location.city'}</div>
+                        <div>{user.location}</div>
                     </span>
                 </span>
         </div>)

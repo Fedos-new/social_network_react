@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
-import Preloader from "../../common/Preloader/Preloader";
+import Preloader from "../../common/components/Preloader/Preloader";
 import ProfileStatusWithHooks from '../ProfileStatusWithHooks';
 
 
@@ -19,16 +19,16 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
 
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
                 <div>
-                    {`Имя : ` + profile.fullName}
+                    {`Name : ` + profile.fullName}
                 </div>
                 <div>
-                    {`Обо мне: ` + profile.aboutMe}
+                    {`About me: ` + profile.aboutMe}
                 </div>
                 <div>
-                    {profile.lookingForAJob === true ? "Ищу работу" : "Не ищу работу"}
+                    {profile.lookingForAJob === true ? "Looking for a job" : "Not looking for a job"}
                 </div>
                 <div>
-                    {"Описание желаемой работы:  " + {getArray}}
+                    {"Description of the desired job:  " + {getArray}}
                 </div>
 
 

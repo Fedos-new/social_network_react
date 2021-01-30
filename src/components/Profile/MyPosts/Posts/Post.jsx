@@ -4,7 +4,7 @@ import s from './Post.module.css';
 const Post = (props) => {
     return  (
             <div className={s.item}>
-            <img alt='аватарка' src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg'/>
+            <img alt='avatar' src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg'/>
                 {props.message}
              <div>
                 <span>Like </span> {props.likeCount}

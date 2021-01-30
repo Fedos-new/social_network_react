@@ -7,7 +7,7 @@ import {
     toggleFollowingProgress, requestUsers,
 } from '../../redux/users-reducer';
 import Users from './Users';
-import Preloader from "../common/Preloader/Preloader";
+import Preloader from "../common/components/Preloader/Preloader";
 import {compose} from "redux";
 import {
     getCurrentPage,

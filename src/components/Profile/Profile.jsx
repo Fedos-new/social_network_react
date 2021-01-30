@@ -1,12 +1,13 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import comStyle from "../common/style/Container.module.css";
 
 
 const Profile = (props) => {
 
 
-    return <div>
+    return <div  className={comStyle.wrapContainer}>
         <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
         <MyPostsContainer />
     </div>

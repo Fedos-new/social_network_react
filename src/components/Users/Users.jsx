@@ -1,10 +1,11 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import User from "./User";
+import Paginator from "../common/components/Paginator/Paginator";
+import User from "./User/User";
+import comStyle from '../common/style/Container.module.css'
 
 
-let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) => {
-    return <div>
+const Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) => {
+    return <div className={comStyle.wrapContainer}>
         <Paginator currentPage={currentPage}
                    onPageChanged={onPageChanged}
                    totalUsersCount={totalUsersCount}
@@ -22,6 +23,11 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) 
                 />)
             }
         </div>
+        <Paginator currentPage={currentPage}
+                   onPageChanged={onPageChanged}
+                   totalUsersCount={totalUsersCount}
+                   pageSize={pageSize}
+        />
     </div>
 }
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import styles from "./Paginator.module.css";
-
+import style from "./Paginator.module.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
     let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -15,24 +16,34 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged, portion
         pages.push(i);
     }
 
-    return <div className={styles.wrapPagination}>
-        {portionNumber > 1 && <button onClick={() => {
-            setPortionNumber(portionNumber - 1)
-        }}>prev</button>}
+    return <div className={style.wrapPagination}>
+        {portionNumber > 1
+        && <button
+            onClick={() => {setPortionNumber(portionNumber - 1)}}
+            className={style.btnShift}
+        >
+            <FontAwesomeIcon icon={faChevronLeft} className={style.iconShift} />
+        </button>
+        }
 
         {pages
             .filter(p => (p >= leftPortionPageNumber && p <= rightPortionPageNumber))
             .map((p, i) => {
                 return <span key={i}
-                             className={`${currentPage === p ? styles.selectedPage : styles.noSelectedPage }`}
+                             className={`${currentPage === p ? style.selectedPage : style.noSelectedPage}`}
                              onClick={(e) => {
                                  onPageChanged(p)
                              }}>{p}</span>
             })}
 
-        {portionNumber < portionCount && <button onClick={() => {
-            setPortionNumber(portionNumber + 1)
-        }}>next</button>}
+        {portionNumber < portionCount
+        && <button
+            onClick={() => {setPortionNumber(portionNumber + 1)}}
+            className={style.btnShift}
+        >
+            <FontAwesomeIcon icon={faChevronRight} className={style.iconShift}/>
+        </button>
+        }
     </div>
 }
 

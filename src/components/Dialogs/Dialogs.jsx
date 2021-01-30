@@ -3,8 +3,8 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {Field, reduxForm} from "redux-form";
-import {Textarea} from "../common/FormsControls/FormsControls";
-import {required} from "../../utils/validator/valodators";
+import {Textarea} from "../common/components/FormsControls/FormsControls";
+import comStyle from "../common/style/Container.module.css";
 
 
 const Dialogs = (props) => {
@@ -22,7 +22,7 @@ const Dialogs = (props) => {
     }
 
     return (
-        <div>
+        <div className={comStyle.wrapContainer}>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
                     {dialogsElements}
@@ -43,7 +43,7 @@ const AddMessageForm = ({handleSubmit}) => {
                 <Field component={Textarea}
                        name="newMessageElement"
                        placeholder="newMessageElement"
-                       validate={[required]}/>
+                       />
             </div>
             <div>
                 <button>SEND message</button>

@@ -49,7 +49,6 @@ const profileReducer = (state = initialState, action) => {
                 posts: state.posts.filter(p => p.id !== action.postId)
             }
         }
-
         default:
             return state;
     }

@@ -1,17 +1,18 @@
 import React from "react";
 import {reduxForm} from "redux-form";
-import {createField, Input} from "../common/FormsControls/FormsControls";
+import {createField, Input} from "../common/components/FormsControls/FormsControls";
 import {required} from "../../utils/validator/valodators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
-import s from "../common/FormsControls/FormsControls.module.css"
+import s from "../common/components/FormsControls/FormsControls.module.css"
+import comStyle from "../common/style/Container.module.css";
 
 
 const LoginForm = ({handleSubmit, error}) => {
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={comStyle.wrapContainer}>
             <div>
                 {createField('email', Input, 'email', [required])}
             </div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import comStyle from "../common/style/Container.module.css";
 
 
 
 const News = (props) => {
     return (
-        <div>
+        <div className={comStyle.wrapContainer}>
             News
 
         </div>
