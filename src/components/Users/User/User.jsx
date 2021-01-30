@@ -37,7 +37,8 @@ const User = ({user, followingInProgress, follow, unfollow}) => {
                         <div>{user.location}</div>
                     </span>
                 </span>
-        </div>)
+        </div>
+    )
 }
 
 export default User;

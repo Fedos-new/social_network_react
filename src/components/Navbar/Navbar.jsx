@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
-import FriendsBar from "../Friends/FriendsBar";
+import FriendsBar from "../Friends/FriendsBar/FriendsBar";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faUser,

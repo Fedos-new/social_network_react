@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './FriendsBar.module.css';
-import av1 from '../Friends/imgFriends/1.png';
-import av2 from '../Friends/imgFriends/2.png';
-import av3 from '../Friends/imgFriends/3.png';
+import av1 from './imgFriends/1.png';
+import av2 from './imgFriends/2.png';
+import av3 from './imgFriends/3.png';
 
 const FriendsBar = () => {
     return (
