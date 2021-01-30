@@ -36,9 +36,9 @@ const Dialogs = (props) => {
     )
 };
 
-const AddMessageForm = (props) => {
+const AddMessageForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field component={Textarea}
                        name="newMessageElement"

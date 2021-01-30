@@ -4,9 +4,6 @@ import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {reset} from 'redux-form';
-
-
 
 
 
@@ -21,7 +18,6 @@ const mapDispatchToProps= (dispatch) => {
     return {
         sendMessageClick: (newMessageElement) => {
             dispatch(sendMessageCreator(newMessageElement));
-            dispatch(reset('dialogAddMessageForm'))
         }
     }
 }

@@ -1,4 +1,23 @@
+.wrapPagination{
+    display: flex;
+    justify-content: center;
+}
+.selectedPage,.noSelectedPage{
+    padding: 4px 8px;
+    border-radius: 2em;
+    width: 15px;
+    text-align: center;
+    margin: 5px 2px;
+    cursor: pointer;
+}
+
+
 .selectedPage {
-    font-weight: bold;
-    cursor: pointer
+    font-weight: 700;
+
+    color: #727475;
+}
+.noSelectedPage{
+    color: #26A69A;
+    font-weight: 500;
 }

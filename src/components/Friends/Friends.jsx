@@ -4,7 +4,6 @@ import av1 from '../Friends/imgFriends/1.png';
 import av2 from '../Friends/imgFriends/2.png';
 import av3 from '../Friends/imgFriends/3.png';
 
-
 const Friends = (props) => {
     return (
         <div>
@@ -24,7 +23,6 @@ const Friends = (props) => {
         </div>
 
     )
-
 };
 
 export default Friends;

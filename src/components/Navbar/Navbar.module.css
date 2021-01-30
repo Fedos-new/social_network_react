@@ -1,15 +1,16 @@
 .nav {
     grid-area: n;
     background-color: #212121;
-    padding: 20px 37px 20px 37px;
     overflow: hidden;
-
+    width: 200px;
 }
 
 .item a {
     color: #727475;
     text-decoration: none;
-    font-size: 18px;
+    line-height: 48px;
+    padding-left: 16px;
+    font-size: 1.15rem;
 
 }
 
@@ -17,7 +18,4 @@
     color: coral;
 }
 
-.item{
-    padding-top: 25px;
 
-}
