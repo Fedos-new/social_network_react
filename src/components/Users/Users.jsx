@@ -18,16 +18,9 @@ const Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}
                                            followingInProgress={props.followingInProgress}
                                            follow={props.follow}
                                            unfollow={props.unfollow}
-
-
                 />)
             }
         </div>
-        <Paginator currentPage={currentPage}
-                   onPageChanged={onPageChanged}
-                   totalUsersCount={totalUsersCount}
-                   pageSize={pageSize}
-        />
     </div>
 }
 

@@ -2,6 +2,9 @@ import React from 'react';
 import styles from "./User.module.css";
 import userPhoto from "../../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
+import StandardButton from "../../common/components/StandartButton/StandartButton";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faReply, faShare} from '@fortawesome/free-solid-svg-icons';
 
 
 const User = ({user, followingInProgress, follow, unfollow}) => {
@@ -18,14 +21,22 @@ const User = ({user, followingInProgress, follow, unfollow}) => {
                     </div>
                     <div>
                         {user.followed
-                            ? <button disabled={followingInProgress.some(id => id === user.id)}
+                            ? <StandardButton disabled={followingInProgress.some(id => id === user.id)}
+
                                       onClick={() => {
                                           follow(user.id)
-                                      }}>Unfollow</button>
-                            : <button disabled={followingInProgress.some(id => id === user.id)}
-                                      onClick={() => {
-                                          unfollow(user.id)
-                                      }}>Follow</button>}
+                                      }}>
+                                Unfollow
+                                <FontAwesomeIcon icon={faReply} className={styles.iconBtn}/>
+                            </StandardButton>
+                            : <StandardButton
+                                primary
+                                disabled={followingInProgress.some(id => id === user.id)}
+                                onClick={() => {unfollow(user.id)}}>
+                                Follow
+                                <FontAwesomeIcon icon={faShare} className={styles.iconBtn}/>
+                            </StandardButton>
+                        }
                     </div>
                  </span>
             <span>

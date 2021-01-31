@@ -3,7 +3,7 @@ import style from "./Paginator.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+const Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
     let pagesCount = Math.ceil(totalUsersCount / pageSize);
 
     let portionCount = Math.ceil(pagesCount / portionSize)

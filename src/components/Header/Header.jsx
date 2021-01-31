@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
+import StandardButton from "../common/components/StandartButton/StandartButton";
 
 
 const Header = (props) => {
@@ -10,7 +11,7 @@ const Header = (props) => {
         <span className={s.loginBlok}>
                 {
                     props.isAuth
-                        ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
+                        ? <div>{props.login} - <StandardButton onClick={props.logout}>Logout</StandardButton></div>
                         : <NavLink to={'/login'}>Login</NavLink>
                 }
 

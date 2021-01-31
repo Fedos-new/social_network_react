@@ -7,13 +7,15 @@ import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import s from "../common/components/FormsControls/FormsControls.module.css"
 import comStyle from "../common/style/Container.module.css";
+import StandardButton from "../common/components/StandartButton/StandartButton";
+import style from './Login.module.css'
 
 
 const LoginForm = ({handleSubmit, error}) => {
 
     return (
         <form onSubmit={handleSubmit} className={comStyle.wrapContainer}>
-            <div>
+            <div >
                 {createField('email', Input, 'email', [required])}
             </div>
             <div>
@@ -26,7 +28,7 @@ const LoginForm = ({handleSubmit, error}) => {
                 {error}</div>}
 
             <div>
-                <button>Login</button>
+                <StandardButton>Login</StandardButton>
             </div>
         </form>
 
@@ -43,7 +45,7 @@ const Login = (props) => {
     if (props.isAuth) {
         return <Redirect to={'/profile'}/>
     }
-    return <div>
+    return <div className={style.loginWrap}>
         <h1>LOGIN</h1>
         <LoginReduxFrom onSubmit={onSubmit}/>
     </div>

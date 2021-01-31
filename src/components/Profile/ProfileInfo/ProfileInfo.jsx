@@ -5,17 +5,17 @@ import ProfileStatusWithHooks from '../ProfileStatusWithHooks';
 
 
 const ProfileInfo = ({profile, status, updateStatus}) => {
+    const getArray = () => profile.contacts.map(el => profile.contacts[el])
     if (!profile) {
         return <Preloader/>
     }
 
-    const getArray = () => profile.contacts.map(el => profile.contacts[el])
 
     return (
 
         <div>
             <div className={s.descriptionBlock}>
-                <img src={profile.photos.large}/>
+                <img alt={'avatar'} src={profile.photos.large}/>
 
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
                 <div>
@@ -30,7 +30,6 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
                 <div>
                     {"Description of the desired job:  " + {getArray}}
                 </div>
-
 
             </div>
         </div>

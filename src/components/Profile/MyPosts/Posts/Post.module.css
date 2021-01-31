@@ -1,10 +1,27 @@
 .item {
     color: #212121;
+    margin: 24px 0;
 }
 
 .item img {
     width: 50px;
     height: 50px;
     border-radius: 30px;
-    margin-left: 15px;
+    margin: 0 12px 0 0;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+}
+
+.iconLike {
+    color: #727475;
+    margin: 2px 4px 0 24px;
+}
+
+.likeCount {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
 }

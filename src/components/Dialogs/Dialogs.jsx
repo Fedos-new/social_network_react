@@ -1,10 +1,12 @@
 import React from 'react';
 import s from './Dialogs.module.css';
+import s1 from '../Profile/MyPosts/MyPosts.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../common/components/FormsControls/FormsControls";
 import comStyle from "../common/style/Container.module.css";
+import StandardButton from "../common/components/StandartButton/StandartButton";
 
 
 const Dialogs = (props) => {
@@ -38,15 +40,16 @@ const Dialogs = (props) => {
 
 const AddMessageForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={s.fromSendMessage}>
             <div>
                 <Field component={Textarea}
                        name="newMessageElement"
-                       placeholder="newMessageElement"
+                       placeholder="Your message"
+                       className={s1.textarea}
                        />
             </div>
             <div>
-                <button>SEND message</button>
+                <StandardButton>Send message</StandardButton>
             </div>
         </form>
     )
