@@ -43,3 +43,13 @@
 input[type="file"] {
     display: none;
 }
+
+.contacts {
+    padding-left: 8px;
+}
+
+
+.inputStatus {
+    min-width: 200px;
+    display: inline-block;
+}

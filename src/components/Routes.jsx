@@ -24,7 +24,6 @@ export const PATH = {
 }
 
 
-
 const Routes = () => {
     return (<>
             <Route path={PATH.DIALOGS} render={withSuspense(DialogsContainer)}/>

@@ -13,3 +13,6 @@
     color: firebrick;
     display: inline-block;
 }
+.textarea {
+    height: 16px;
+}

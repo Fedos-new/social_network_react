@@ -1,4 +1,5 @@
 import React from "react";
+import s from "../../Login/Login.module.css";
 
 class ProfileStatus extends React.Component {
 
@@ -47,6 +48,7 @@ class ProfileStatus extends React.Component {
                                onBlur={this.deactivateEditMode}
                                onChange={this.onStatusChange}
                                value={this.state.status}
+                               className={s.inputLogin}
                         />
                     </div>
                 }
