@@ -9,6 +9,10 @@ import s from "../common/components/FormsControls/FormsControls.module.css"
 import comStyle from "../common/style/Container.module.css";
 import StandardButton from "../common/components/StandartButton/StandartButton";
 import style from './Login.module.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
+import styles from "../Users/User/User.module.css";
+import {PATH} from "../Routes";
 
 
 const LoginForm = ({handleSubmit, error}) => {
@@ -28,12 +32,13 @@ const LoginForm = ({handleSubmit, error}) => {
                 {error}</div>}
 
             <div>
-                <StandardButton>Login</StandardButton>
+                <StandardButton>Login  <FontAwesomeIcon icon={faSignInAlt} className={styles.iconBtn}/></StandardButton>
             </div>
         </form>
 
     )
 }
+
 
 const LoginReduxFrom = reduxForm({form: 'login'})(LoginForm)
 
@@ -43,7 +48,7 @@ const Login = (props) => {
         props.login(fromData.email, fromData.password, fromData.rememberMe)
     }
     if (props.isAuth) {
-        return <Redirect to={'/profile'}/>
+        return <Redirect to={PATH.PROFILE}/>
     }
     return <div className={style.loginWrap}>
         <h1>LOGIN</h1>

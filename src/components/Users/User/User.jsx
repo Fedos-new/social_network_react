@@ -30,7 +30,7 @@ const User = ({user, followingInProgress, follow, unfollow}) => {
                                 <FontAwesomeIcon icon={faReply} className={styles.iconBtn}/>
                             </StandardButton>
                             : <StandardButton
-                                primary
+                                primary={'green'}
                                 disabled={followingInProgress.some(id => id === user.id)}
                                 onClick={() => {unfollow(user.id)}}>
                                 Follow

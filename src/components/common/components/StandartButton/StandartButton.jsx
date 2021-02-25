@@ -3,19 +3,16 @@ import s from './StandardButton.module.css'
 
 const StandardButton = (props) => {
 
-    const {primary,className}= props
+    const {primary,className} = props
 
-    let classname = `${primary ? s.primary : s.default} ${className}`;
+    const classnameFinal = `${primary ? s.primary : s.default} ${className}`;
 
     return (
         <button
-            className={classname}
             {...props}
+            className={classnameFinal}
         />
-
     )
-
-
 }
 
 export default StandardButton;
