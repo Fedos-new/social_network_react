@@ -15,7 +15,7 @@ import styles from "../Users/User/User.module.css";
 import {PATH} from "../Routes";
 
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl }) => {
 
     return (
         <form onSubmit={handleSubmit} className={comStyle.wrapContainer}>
@@ -28,6 +28,9 @@ const LoginForm = ({handleSubmit, error}) => {
             <div>
                 {createField(null, Input, 'rememberMe', [], {type: 'checkbox'}, 'remember me')}
             </div>
+            {captchaUrl && <img src={captchaUrl} alt="captcha"/>}
+            {captchaUrl &&  createField('Symbols from image', Input, 'captcha', [required])}
+
             {error && <div className={s.formSummaryError}>
                 {error}</div>}
 
@@ -45,18 +48,19 @@ const LoginReduxFrom = reduxForm({form: 'login'})(LoginForm)
 
 const Login = (props) => {
     const onSubmit = (fromData) => {
-        props.login(fromData.email, fromData.password, fromData.rememberMe)
+        props.login(fromData.email, fromData.password, fromData.rememberMe, fromData.captcha)
     }
     if (props.isAuth) {
-        return <Redirect to={PATH.PROFILE}/>
+        return <Redirect to={'/profile'}/>
     }
     return <div className={style.loginWrap}>
         <h1>LOGIN</h1>
-        <LoginReduxFrom onSubmit={onSubmit}/>
+        <LoginReduxFrom onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
     </div>
 }
 
 const mapStateToProps = (state) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth
 })
 
