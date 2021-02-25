@@ -1,10 +1,12 @@
 .userPhoto {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    margin: 4px 4px 4px 0;
 }
 .userWap {
     margin: 16px 0;
 }
 .iconBtn{
     padding-left: 8px;
+    color: #141414;
 }
