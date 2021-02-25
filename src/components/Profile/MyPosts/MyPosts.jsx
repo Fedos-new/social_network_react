@@ -4,7 +4,7 @@ import Post from "./Posts/Post";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator} from "../../../utils/validator/valodators";
 import {Textarea} from "../../common/components/FormsControls/FormsControls";
-import StandardButton from "../../common/components/StandartButton/StandartButton";
+import StandardButton from "../../common/components/StandardButton/StandardButton";
 
 
 

@@ -7,7 +7,7 @@ import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import s from "../common/components/FormsControls/FormsControls.module.css"
 import comStyle from "../common/style/Container.module.css";
-import StandardButton from "../common/components/StandartButton/StandartButton";
+import StandardButton from "../common/components/StandardButton/StandardButton";
 import style from './Login.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";

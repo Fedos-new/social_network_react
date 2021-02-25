@@ -6,7 +6,7 @@ import Message from "./Message/Message";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../common/components/FormsControls/FormsControls";
 import comStyle from "../common/style/Container.module.css";
-import StandardButton from "../common/components/StandartButton/StandartButton";
+import StandardButton from "../common/components/StandardButton/StandardButton";
 
 
 const Dialogs = (props) => {

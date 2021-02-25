@@ -13,5 +13,6 @@
 }
 
 .loginBlock a {
-    color: white;
+    text-decoration: none;
+    color: #141414;
 }

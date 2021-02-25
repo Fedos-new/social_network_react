@@ -1,6 +1,6 @@
 import React from 'react';
 import comStyle from "../common/style/Container.module.css";
-import StandardButton from "../common/components/StandartButton/StandartButton";
+import StandardButton from "../common/components/StandardButton/StandardButton";
 
 
 const Friends = () => {
