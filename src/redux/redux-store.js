@@ -9,7 +9,7 @@ import { reducer as formReducer } from 'redux-form'
 import appReducer from './app-reducer';
 
 let reducers = combineReducers({
-    profilePage: profileReducer, // <---profileReducer тоже самое, что и profileReducer: profileReducer  (св-во(метод) : значание(функция, которую мы определили))
+    profilePage: profileReducer, // <---profileReducer тоже самое, что и profileReducer: profileReducer  (св-во(метод) : значение(функция, которую мы определили))
     dialogsPage: dialogsReducer,
     navBar: navbarReducer,
     usersPage: usersReducer,

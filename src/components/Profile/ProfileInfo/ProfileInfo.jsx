@@ -86,6 +86,8 @@ const Contact = ({contactTitle, contactValue}) => {
 
     </div>
 
+
 }
+
 
 export default ProfileInfo;

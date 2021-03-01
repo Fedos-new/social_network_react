@@ -1,12 +1,15 @@
 import React from 'react';
 import comStyle from "../common/style/Container.module.css";
+import s from "../common/style/Banner.module.css";
+import banner from "../../assets/images/inDevelopment.png";
 
 
-const Settings = (props) => {
+const Settings = () => {
     return (
         <div className={comStyle.wrapContainer}>
-            Settings
-
+            <div className={s.wrapBanner}>
+                <img src={banner} alt="in development" className={s.banner}/>
+            </div>
         </div>
 
     )

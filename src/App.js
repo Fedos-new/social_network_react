@@ -11,8 +11,16 @@ import Routes from "./components/Routes";
 
 
 class App extends React.Component {
+    catchAllUnhandleErrors = (promiseRejactionEvent) => {
+        // alert('Some error occured')
+        console.error(promiseRejactionEvent)
+    }
     componentDidMount() {
         this.props.initializeApp()
+        window.addEventListener("unhandledrejection", this.catchAllUnhandleErrors)
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandleErrors)
     }
 
     render() {

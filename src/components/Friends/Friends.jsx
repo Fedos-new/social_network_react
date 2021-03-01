@@ -1,17 +1,17 @@
 import React from 'react';
 import comStyle from "../common/style/Container.module.css";
-import StandardButton from "../common/components/StandardButton/StandardButton";
+import s from "../common/style/Banner.module.css";
+import banner from "../../assets/images/inDevelopment.png";
 
 
 const Friends = () => {
 
 
-
     return (
         <div  className={comStyle.wrapContainer}>
-            Friends
-
-            <StandardButton>My Friends</StandardButton>
+            <div className={s.wrapBanner}>
+                <img src={banner} alt="in development" className={s.banner}/>
+            </div>
         </div>
     )
 };

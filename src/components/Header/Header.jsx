@@ -10,16 +10,24 @@ import {PATH} from "../Routes";
 import logo from '../../assets/images/logoP.png'
 
 
-const Header = (props) => {
+
+const Header = ({profile, login, logout, isAuth}) => {
+
+
+
 
     return <header className={s.header}>
         <img alt="картинка" src={logo}/>
 
         <span className={s.loginBlock}>
                 {
-                    props.isAuth
-                        ? <div>{props.login}
-                            <StandardButton onClick={props.logout}
+
+                    isAuth
+                        ? <div>{login}
+
+
+                            {/*<img alt={'avatar-mini'} src={profile.photos.small || userPhoto}/>*/}
+                            <StandardButton onClick={logout}
                                             className={style.logout}>Logout <FontAwesomeIcon icon={faSignOutAlt}
                                                                                              className={styles.iconBtn}/>
                             </StandardButton></div>

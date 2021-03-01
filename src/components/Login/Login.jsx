@@ -12,7 +12,6 @@ import style from './Login.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
 import styles from "../Users/User/User.module.css";
-import {PATH} from "../Routes";
 
 
 const LoginForm = ({handleSubmit, error, captchaUrl }) => {
@@ -23,7 +22,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl }) => {
                 {createField('email', Input, 'email', [required])}
             </div>
             <div>
-                {createField('password', Input, 'password', [required], 'password')}
+                {createField('password', Input, 'password', [required], {type: 'password'})}
             </div>
             <div>
                 {createField(null, Input, 'rememberMe', [], {type: 'checkbox'}, 'remember me')}

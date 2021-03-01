@@ -1,0 +1,11 @@
+.wrapBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
+}
+.banner {
+    height: 644px;
+    width: 826px;
+}
